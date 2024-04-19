@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+#sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Start off-screen */
+    background-color: #333;
+    transition: left 0.3s ease; /* Smooth transition animation */
+}
+
+#content {
+    margin-left: 250px; /* Adjust main content position */
+    transition: margin-left 0.3s ease; /* Smooth transition animation */
+}
+
+#toggleSidebar:checked ~ #sidebar {
+    left: 0; /* Show sidebar when checkbox is checked */
+}
+
+#toggleSidebar:checked ~ #content {
+    margin-left: 0; /* Adjust main content position when sidebar is shown */
+}
+
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" id="toggleSidebar">
+<div id="sidebar">
+    Sidebar Content
+</div>
+<div id="content">
+    Main Content
+</div>
+
+</body>
+</html>
